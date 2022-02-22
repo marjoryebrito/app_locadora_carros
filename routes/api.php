@@ -23,8 +23,8 @@ Route::get('/', function () {
 });
 
 
-Route::apiResource('carro', 'App\Http\Controllers\CarroController');
-Route::apiResource('cliente', 'App\Http\Controllers\ClienteController');
-Route::apiResource('locacao', 'App\Http\Controllers\LocacaoController');
-Route::apiResource('marca', 'App\Http\Controllers\MarcaController');
-Route::apiResource('modelo', 'App\Http\Controllers\ModeloController');
+Route::apiResource('carro', 'CarroController');
+Route::apiResource('cliente', 'ClienteController');
+Route::apiResource('locacao', 'LocacaoController');
+Route::apiResource('marca', 'MarcaController');
+Route::apiResource('modelo', 'ModeloController');
