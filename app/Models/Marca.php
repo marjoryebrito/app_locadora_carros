@@ -15,7 +15,7 @@ class Marca extends Model
 
         $regras = [
             'nome' => 'required|unique:marcas,nome,'.$this->id,
-            'imagem' => 'required'
+            'imagem' => 'required|file|mimes:png,jpg,jpeg'
         ];
 
         return $regras;
@@ -26,7 +26,8 @@ class Marca extends Model
 
         $f = [
             'required' => 'O campo :attribute é obrigatório.',
-            'nome.unique' => 'O nome da marca já existe.'
+            'nome.unique' => 'O nome da marca já existe.',
+            'imagem.mimes' => 'Tipo de arquivo inválido.'
         ];
 
         return $f;
