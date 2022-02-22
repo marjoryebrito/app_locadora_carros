@@ -13,19 +13,23 @@ class Marca extends Model
 
     public function rules(){
 
-        return [
-            'nome' => 'required|unique:marcas',
+        $regras = [
+            'nome' => 'required|unique:marcas,nome,'.$this->id,
             'imagem' => 'required'
         ];
+
+        return $regras;
 
     }
 
     public function feedback(){
 
-        [
+        $f = [
             'required' => 'O campo :attribute é obrigatório.',
             'nome.unique' => 'O nome da marca já existe.'
         ];
+
+        return $f;
 
     }
 }

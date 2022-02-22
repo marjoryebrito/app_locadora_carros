@@ -92,9 +92,12 @@ class MarcaController extends Controller
 
         $marca = $this->marca->find($id);
 
+
         if($marca === null){
             return response()->json(['erro' => 'Recurso solicitado não existe.'], 404);
         }
+
+        $request->validate($marca->rules(), $marca->feedback());
 
         $marca->update($request->all());
 
