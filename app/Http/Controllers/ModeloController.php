@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Modelo;
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 
 class ModeloController extends Controller
 {
 
-    public function __construct(Marca $modelo){
+    public function __construct(Modelo $modelo){
         $this->modelo = $modelo;
     }
 
@@ -165,6 +167,6 @@ class ModeloController extends Controller
 
         $modelo->delete();
 
-        return response()->json(['msg' => 'O modelo foi removida com sucesso!'], 200);
+        return response()->json(['msg' => 'O modelo foi removido com sucesso!'], 200);
     }
 }
