@@ -35,7 +35,7 @@ class ModeloController extends Controller
             $modeloRepository->selectAtributosRegistrosRelacionados($atributos_marca);
         }else{
            
-            $modeloRepository->selectAtributosRegistrosRelacionados('marcas');
+            $modeloRepository->selectAtributosRegistrosRelacionados('marca');
         }
 
 

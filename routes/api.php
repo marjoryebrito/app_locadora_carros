@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::apiResource('carro', 'CarroController');
 Route::apiResource('cliente', 'ClienteController');
 Route::apiResource('locacao', 'LocacaoController');
-Route::apiResource('marca', 'MarcaController');
+Route::apiResource('marca', 'MarcaController')->middleware('jwt.auth');
 Route::apiResource('modelo', 'ModeloController');
 
 Route::post('login', 'AuthController@login');
